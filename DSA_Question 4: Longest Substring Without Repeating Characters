@@ -1,0 +1,38 @@
+Algorithm :
+
+step 1 : start
+step 2 : Use a sliding window with two pointers.
+step 3 : Track characters in a set.
+step 4 : Move the right pointer and add characters until a repeat.
+step 5 : When repeated, move the left pointer until it's unique again.
+step 6 : Track the max window size.
+step 7 : stop
+
+
+Pseudocode: 
+
+function longestUniqueSubstring(s):
+    set = empty set
+    left = 0
+    max_len = 0
+    for right from 0 to length of s:
+        while s[right] in set:
+            remove s[left] from set
+            left += 1
+        add s[right] to set
+        max_len = max(max_len, right - left + 1)
+    return max_len
+
+
+python code:
+
+def longest_substring(s):
+    seen = set()
+    left = max_len = 0
+    for right in range(len(s)):
+        while s[right] in seen:
+            seen.remove(s[left])
+            left += 1
+        seen.add(s[right])
+        max_len = max(max_len, right - left + 1)
+    return max_len
