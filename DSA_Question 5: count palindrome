@@ -44,3 +44,4 @@ def count_palindromic_substrings(s):
         total += expand(i, i)      # Odd
         total += expand(i, i + 1)  # Even
     return total
+
