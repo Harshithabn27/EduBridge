@@ -1,3 +1,7 @@
+Question 2: Binary Search
+
+Implement binary search to find the index of a target element in a sorted array.
+
 Algorithm :
 
 step 1 : start
