@@ -1,3 +1,7 @@
+Question 3: Anagram Check
+
+Write a function to check if two strings are anagrams of each other (contain the same characters in a different order).
+
 Algorithm:
 
 step 1 : start 
