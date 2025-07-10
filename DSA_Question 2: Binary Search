@@ -1,0 +1,41 @@
+Algorithm :
+
+step 1 : start
+step 2 : Initialize two pointers: low and high.
+step 3 : Repeat until low > high:
+step 4 : Calculate mid.
+         If arr[mid] == target, return mid.
+         If arr[mid] < target, search right half.
+         Else, search left half.
+step 5 : stop
+
+
+Pseudocode :
+
+function binarySearch(arr, target):
+    low = 0
+    high = length of arr - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        else if arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+
+Python Code :
+
+def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
