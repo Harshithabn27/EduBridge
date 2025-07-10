@@ -1,0 +1,42 @@
+Algorithm:
+
+step 1 : start
+step 2 : For each character in the string, expand around that character and its neighbor.
+step 3 : Check both odd-length and even-length palindromes.
+step 4 : Expand while the substring is a palindrome and count.
+step 5 : stop
+
+
+pseudocode: 
+
+function countPalindromes(s):
+    count = 0
+    for i from 0 to length of s - 1:
+        count += expand(i, i)       // Odd
+        count += expand(i, i + 1)   // Even
+
+function expand(left, right):
+    result = 0
+    while left >= 0 and right < length of s and s[left] == s[right]:
+        result += 1
+        left -= 1
+        right += 1
+    return result
+
+
+python code:
+
+def count_palindromic_substrings(s):
+    def expand(l, r):
+        count = 0
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            count += 1
+            l -= 1
+            r += 1
+        return count
+
+    total = 0
+    for i in range(len(s)):
+        total += expand(i, i)      # Odd
+        total += expand(i, i + 1)  # Even
+    return total
