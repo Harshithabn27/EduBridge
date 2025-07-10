@@ -1,0 +1,31 @@
+Algorithm:
+
+step 1 : start
+step 2 : Initialize a hash map to store visited numbers and their indices.
+step 3 : For each number in the array:
+         Calculate the complement (target - current number).
+step 4 : If the complement exists in the map, return the indices.
+         Else, store the number and its index in the map.
+step 5 : stop
+
+
+Pseudocode:
+
+function twoSum(arr, target):
+    map = empty hash map
+    for i from 0 to length of arr - 1:
+        complement = target - arr[i]
+        if complement in map:
+            return [map[complement], i]
+        map[arr[i]] = i
+
+
+Python Code:
+
+def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i
